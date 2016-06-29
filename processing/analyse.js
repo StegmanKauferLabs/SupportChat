@@ -1,5 +1,5 @@
 module.exports = {
-	analyse: function(query){
+	chat: function(query){
 		return "A human needs to help you";
 	}
 }
