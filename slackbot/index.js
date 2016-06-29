@@ -24,8 +24,6 @@ supportbot.on('start', function() {
         if(data.type != "message")//if the user is just typing or something
             return
 
-        console.log(data)
-
         //`data` in the format of
         /*
             type
