@@ -59,7 +59,8 @@ supportbot.on('start', function() {
                         isSupportBot: false,
                         to: null//null val means it's being sent to the bot
                     }, function(e,r){
-                        console.log(e,r)
+                        if(e)
+                            console.log(e)
                     })
 
                     var response = analyse.chat(data)

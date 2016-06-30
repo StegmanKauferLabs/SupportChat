@@ -13,7 +13,6 @@ function getMessageCollection(){
 function addMessageToCollection(data, callback){
 	//data in the form {userId, message, timeStamp, isSupportBot}
 	//callback in the form function(res, err)
-	console.log("adding to collection")
 
 	if(messageCollection){
 		messageCollection.insert(data, function(e,r){
