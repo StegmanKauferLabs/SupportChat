@@ -69,16 +69,18 @@ supportbot.on('start', function() {
                         // console.log("POST_MESSAGE",e,r)
 
 
-                        if(!e && r && r.ok == true){
+                        if(!e && r && r.ok){
+                            console.log(r)
+
                             addToCollection({
                                 userId: r.message.bot_id,
                                 message: r.message.text,
                                 timeStamp: r.ts,
                                 isSupportBot: true,
-                                to: userId
+                                to: data.userhi
                             }, function(e,r){
                                 console.log(e,r)
-                            }) 
+                            })
                         }
                         else{
                             console.log("Something happened",e,r,!e,!!r,r.ok==true)
