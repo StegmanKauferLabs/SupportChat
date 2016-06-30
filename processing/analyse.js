@@ -18,6 +18,14 @@ var repliesGiven = [];
 function analyse(query){
 
 	query = query.text;
+	
+	if(query.toLowerCase() == "thanks"){
+		lastThree = ["","",""];
+		possibleChats = [];
+		count = 0;
+		repliesGiven = [];
+		return "No problem";
+	}
 
 	keywords = query.tokenizeAndStem();
 	lastThree.push(keywords);
