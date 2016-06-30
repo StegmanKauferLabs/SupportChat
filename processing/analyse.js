@@ -15,15 +15,19 @@ var possibleChats = [];
 var count = 0;
 var repliesGiven = [];
 
+function resetChat(){
+	lastThree = ["","",""];
+	possibleChats = [];
+	count = 0;
+	repliesGiven = [];
+}
+
 function analyse(query){
 
 	query = query.text;
 	
 	if(query.toLowerCase() == "thanks"){
-		lastThree = ["","",""];
-		possibleChats = [];
-		count = 0;
-		repliesGiven = [];
+		resetChat();
 		return "No problem";
 	}
 
@@ -47,6 +51,7 @@ function analyse(query){
 			}
 		}
 		if(bestChat == -1){
+			resetChat();
 			return "Seek a human for help";
 		}
 		
@@ -69,12 +74,14 @@ function analyse(query){
 	}
 	
 	if(bestScore == 0){
+		resetChat();
 		return "Seek a human for help";
 	}
 	
 	var result = chats[bestChat][bestIndex];
 	
 	if(result === undefined){
+		resetChat();
 		return "Seek a human for help";
 	}
 	
