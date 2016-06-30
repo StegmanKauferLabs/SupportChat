@@ -70,7 +70,6 @@ supportbot.on('start', function() {
 
 
                         if(!e && r && r.ok){
-                            console.log(r)
 
                             addToCollection({
                                 userId: r.message.bot_id,
