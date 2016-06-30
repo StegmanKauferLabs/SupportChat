@@ -56,7 +56,8 @@ supportbot.on('start', function() {
                         userId: data.user,
                         message: data.text,
                         timeStamp: data.ts,
-                        isSupportBot: false
+                        isSupportBot: false,
+                        to: null//null val means it's being sent to the bot
                     }, function(e,r){
                         console.log(e,r)
                     })
@@ -73,7 +74,8 @@ supportbot.on('start', function() {
                                 userId: r.message.bot_id,
                                 message: r.message.text,
                                 timeStamp: r.ts,
-                                isSupportBot: true
+                                isSupportBot: true,
+                                to: userId
                             }, function(e,r){
                                 console.log(e,r)
                             }) 
